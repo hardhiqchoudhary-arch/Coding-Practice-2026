@@ -1,0 +1,6 @@
+Select employee_id,
+Case 
+When employee_id % 2 = 1 and name not like 'M%' then Salary
+ELSE 0 
+END AS bonus
+From Employees
