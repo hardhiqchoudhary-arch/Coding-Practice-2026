@@ -1,0 +1,4 @@
+Delete P1
+From Person as P1 Inner Join Person as P2
+Where P1.email = P2.email
+AND P1.id > P2.id 
