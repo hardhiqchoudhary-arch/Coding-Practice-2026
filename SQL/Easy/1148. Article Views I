@@ -1,0 +1,4 @@
+Select distinct(V1.author_id) as id
+From Views V1 inner join Views V2
+Where V1.author_id = V2.viewer_id
+order by id
