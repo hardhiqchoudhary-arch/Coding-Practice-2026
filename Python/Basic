@@ -1,0 +1,72 @@
+# LISTS - Practice these for 15 minutes
+nums = [1, 2, 3, 4, 5]
+nums.append(6)           # [1, 2, 3, 4, 5, 6]
+nums.pop()               # [1, 2, 3, 4, 5]
+nums[0]                  # First element: 1
+nums[-1]                 # Last element: 5
+nums[1:3]                # Slice: [2, 3]
+nums[::-1]               # Reverse: [5, 4, 3, 2, 1]
+
+# List comprehension
+squares = [x*x for x in range(5)]  # [0, 1, 4, 9, 16]
+evens = [x for x in nums if x % 2 == 0]  # [2, 4]
+
+print(squares)
+print(evens)
+
+
+# DICTIONARIES - Practice for 15 minutes
+freq = {}
+freq['a'] = 1
+freq['b'] = 2
+print(freq)              # {'a': 1, 'b': 2}
+
+freq.get('a', 0)         # 1
+freq.get('c', 0)         # 0 (default)
+
+'a' in freq              # True
+'c' in freq              # False
+
+# Frequency counter pattern
+from collections import Counter
+count = Counter([1, 1, 2, 2, 2, 3])
+print(count)             # Counter({2: 3, 1: 2, 3: 1})
+
+
+# SETS - Practice for 10 minutes  
+unique = set([1, 2, 2, 3, 3])
+print(unique)            # {1, 2, 3}
+
+unique.add(4)
+print(unique)            # {1, 2, 3, 4}
+
+1 in unique              # True - O(1) lookup!
+
+
+# STRINGS - Practice for 10 minutes
+s = "hello"
+print(s[0])              # 'h'
+print(s[-1])             # 'o'
+print(s[::-1])           # 'olleh' - reversed!
+
+s.upper()                # 'HELLO'
+s.split('l')             # ['he', '', 'o']
+''.join(['a', 'b', 'c']) # 'abc'
+
+
+# PYTHON TRICKS - Practice for 10 minutes
+# Swap
+a, b = 5, 10
+a, b = b, a              # Now a=10, b=5
+
+# Max/min
+max(1, 5, 3)             # 5
+min([2, 7, 1])           # 1
+
+# Range
+list(range(5))           # [0, 1, 2, 3, 4]
+list(range(2, 7))        # [2, 3, 4, 5, 6]
+
+# Enumerate
+for i, val in enumerate(['a', 'b', 'c']):
+    print(f"Index {i}: {val}")
