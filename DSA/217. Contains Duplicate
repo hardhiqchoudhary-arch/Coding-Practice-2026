@@ -1,0 +1,15 @@
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        hashset = set()
+        for n in nums:
+            if n in hashset:
+                return True
+            hashset.add(n)
+        return False
+
+
+
+
+# Here we have used hashset.
+
+Here we are comparing each element so time complexity is O(n) and as we have created a hashset, so we are using extra memory and space complexity is O(n).
