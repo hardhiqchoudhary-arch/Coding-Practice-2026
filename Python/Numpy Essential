@@ -1,0 +1,50 @@
+import numpy as np
+#Creare Array
+
+a = np.array([1, 2, 3, 4, 5])
+print(f"1D array: {a}")
+b = np.array([[1,2,3],
+             [4,5,6]])
+print(f"2d Array: {b}")
+---1D array: [1 2 3 4 5]
+2d Array: [[1 2 3]
+ [4 5 6]]
+
+
+#Array Operations
+x = np.array([1,2,3])
+y = np.array([4,5,6])
+print(f"Add: {x+y}")
+print(f"Multiply: {x*y}")
+print(f"Sqaure: {x**2}")
+---Add: [5 7 9]
+Multiply: [ 4 10 18]
+Sqaure: [1 4 9]
+
+
+##MATRIX OPERATIONS
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+print(f"Matrix Multiplication: \n{np.dot(A,B)}")
+---Matrix Multiplication: 
+[[19 22]
+ [43 50]]
+
+
+#Useful function
+Data = np.array([1,2,3,4,5])
+print(f"Mean: {Data.mean()}")
+print(f"Sum: {Data.sum()}")
+print(f"Shape: {Data.shape}")
+---Mean: 3.0
+Sum: 15
+Shape: (5,)
+
+
+#Reshapeing 
+arr = np.array([1,2,3,4,5,6])
+reshaped = arr.reshape(2,3)
+print(f"Reshaped:\n {reshaped}")
+---- Reshaped:
+ [[1 2 3]
+ [4 5 6]]
