@@ -1,0 +1,17 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        l,r = 0,1
+        maxprofit = 0
+        
+        while r < len(prices):
+            if prices[r] > prices[l]:
+                profit = prices[r]-prices[l]
+                maxprofit = max(maxprofit,profit)
+            else:
+                l = r
+            r = r + 1
+        return maxprofit
+
+
+#We will take two pointers, one in start (l) and one in right(r), and take max profit as 0 in first, then
+right - left will give you max profit till the value of l exceeds value of r. In that case, we will make value of l = value of r and short r by 1 towards right.
