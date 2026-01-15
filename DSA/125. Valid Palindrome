@@ -1,0 +1,14 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        String = re.sub(r"[^A-Za-z0-9]", "", s).lower()
+        x,y = 0, len(String)-1
+        while x < y :
+            if String[x] != String[y]:
+                return False
+            else:
+                x = x + 1
+
+
+#Here, first we are removing special characters from string, then we are taking two pointers, one in first and one is last
+, then we are comparing, and if there both are different, then we will print False. If both are same, then
+we increase first pointer by one and decrease second pointer by one and then again compare.
