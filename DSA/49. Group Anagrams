@@ -1,1 +1,57 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        res = defaultdict(list)
+        for s in strs:
+            count = [0] * 26
+            for c in s:
+                count[ord(c)-ord("a")] += 1
+                
+            res[tuple(count)].append(s)
+        return list(res.values())
 
+
+Here, first we are creating a counting frequency list from 0 to 26 for each alphabets. 
+[0,0,0,0,0,0,0,0,0,0,0,0...]
+
+then, for each character in one particular string, we are subtracting ascii value of that keyword with ascii value of 'a'
+For each character we increase its position:
+
+For 't' → ord('t') - ord('a') = 19
+count[19] += 1
+
+For 'e' → ord('e') - ord('a') = 4
+count[4] += 1
+
+For 'a' → ord('a') - ord('a') = 0
+count[0] += 1
+
+Final count list becomes:
+
+[1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0]
+this list can appear for many strings , means they have same letters.
+
+
+-----
+
+
+"res[tuple(count)].append(s)"
+
+We append the string s into the list belonging to that key.
+
+Example:
+
+If s = "eat":
+
+res[(count_tuple)] becomes ["eat"]
+
+
+If later s = "tea" arrives, it has the SAME tuple key, so:
+
+res[(count_tuple)].append("tea")
+
+
+Now dictionary looks like:
+
+res = {
+   (1,0,0,0,1,...,1): ["eat", "tea"]
+}
